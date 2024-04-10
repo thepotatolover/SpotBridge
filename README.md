@@ -1,6 +1,6 @@
 # SpotBridge
-Simple python script to show spotify song info without linking spotify account
+A simple Python script to show Spotify song info without linking a Spotify account
 
 Requires: `pypresence spotipy python-dotenv`
 
-DM tom1212. On discord for help
+DM [tom1212.](https://discord.com/users/1118973285766533250) on Discord for help
