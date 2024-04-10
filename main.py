@@ -40,7 +40,7 @@ while True:  # The presence will stay on as long as the program is running
         progress = milliseconds_to_minutes_seconds(current_track['progress_ms'])
         duration = milliseconds_to_minutes_seconds(current_track['item']['duration_ms'])
         explict = current_track['item']['explicit']
-        print(RPC.update(details=f"{track_name}, {artist_name}", state=f"{progress}/{duration}, Explict: {explict}", large_image=album_image, large_text=album_name, buttons=[{"label": "View on spotify", "url": song_url}, {"label": "Github", "url": 'https://github.com/thepotatolover/SpotBridge'}]))
+        print(RPC.update(details=f"{track_name}, {artist_name}", state=f"{progress}/{duration}, Explict: {explict}", large_image=album_image, large_text=album_name, buttons=[{"label": "View on Spotify", "url": song_url}, {"label": "GitHub Repo", "url": 'https://github.com/thepotatolover/SpotBridge'}]))
         time.sleep(15) # Can only update rich presence every 15 seconds
     else:
         print(RPC.update(details=f"Not playing"))
