@@ -17,14 +17,17 @@ redirect_uri = os.getenv('redirect_uri')
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(username=username, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope="user-read-currently-playing"))
 
+# MS to M:S Converter
 def milliseconds_to_minutes_seconds(milliseconds):
+    # Work out seconds
     seconds = milliseconds / 1000
-    if seconds > 59:
-        minutes = seconds // 60
-        remaining_seconds = seconds % 60
-        return f"{int(minutes)}:{int(remaining_seconds)}"
-    else:
-        return f"0:{int(seconds)}"
+    
+    # Work out minutes and seconds
+    minutes = int(seconds // 60)
+    remaining_seconds = int(seconds % 60)
+    
+    # Return minutes and seconds, while padding single digit numbers
+    return f"{minutes:02}:{remaining_seconds:02}"
     
 RPC = Presence(discord_client_id,pipe=0)  # Initialize the client class
 RPC.connect() # Start the handshake loop
