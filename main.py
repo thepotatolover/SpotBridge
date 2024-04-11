@@ -17,7 +17,7 @@ redirect_uri = os.getenv('redirect_uri')
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(username=username, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, scope="user-read-currently-playing"))
 
-# MS to M:S Converter
+# ms to m:s Converter
 def milliseconds_to_minutes_seconds(milliseconds):
     # Work out seconds
     seconds = milliseconds / 1000
